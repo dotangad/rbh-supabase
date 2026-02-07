@@ -3,7 +3,13 @@
 import { useRef, useEffect } from "react";
 import { GameEngine } from "@/game/engine";
 
-export default function GameCanvas({ seed }: { seed: number }) {
+export default function GameCanvas({
+  seed,
+  onGameOver,
+}: {
+  seed: number;
+  onGameOver?: (score: number) => void;
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -11,7 +17,7 @@ export default function GameCanvas({ seed }: { seed: number }) {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
 
-    const engine = new GameEngine(canvas, seed);
+    const engine = new GameEngine(canvas, seed, onGameOver);
     engine.start();
 
     const onResize = () => {
@@ -25,7 +31,7 @@ export default function GameCanvas({ seed }: { seed: number }) {
       engine.stop();
       window.removeEventListener("resize", onResize);
     };
-  }, [seed]);
+  }, [seed, onGameOver]);
 
   return <canvas ref={canvasRef} className="block h-screen w-screen bg-black" />;
 }
