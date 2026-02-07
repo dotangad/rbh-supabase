@@ -233,6 +233,10 @@ otp_expiry = 3600
 # subject = "Your password has been changed"
 # content_path = "./templates/password_changed_notification.html"
 
+[auth.email.template.magic_link]
+subject = "Sign in to asteroids"
+content_path = "./supabase/templates/magic_link.html"
+
 [auth.sms]
 # Allow/disallow new user signups via SMS to your project.
 enable_signup = false

@@ -20,7 +20,6 @@ export default function AsteroidsPage() {
       >
         Start Game
       </button>
-      <p className="text-sm text-zinc-600">← → or A D to steer</p>
     </div>
   );
 }
