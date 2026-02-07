@@ -1,5 +1,7 @@
 # Building a Battle Royale Game with Supabase and React
 
+Code available: [[https://github.com/dotangad/rbh-supabase]]
+
 ---
 
 ## 1 — What is Supabase?
